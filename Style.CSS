@@ -1,1 +1,155 @@
+/* Configurações Gerais */
+:root {
+    --bg-verde-claro: #e8f5e9;
+    --texto-branco: #ffffff;
+    --detalhe-sakura: #ffb7c5;
+    --box-rgba: rgba(46, 125, 50, 0.5); /* Fundo semi-transparente para dar contraste à letra branca */
+    --tamanho-base: 18px;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--tamanho-base);
+    background-color: var(--bg-verde-claro);
+    color: var(--texto-branco);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Barra de Acessibilidade estática no topo */
+.accessibility-bar {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.control-group button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 2px solid var(--detalhe-sakura);
+    background-color: white;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-group button:hover {
+    background-color: var(--detalhe-sakura);
+    color: white;
+}
+
+/* Camada de Brilho (Usa opacidade preta invertida para simular brilho menor) */
+#overlay-brilho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0; /* Começa em 0 (brilho normal) */
+    pointer-events: none; /* Não bloqueia cliques */
+    z-index: 99;
+}
+
+/* Elementos de Sakura Decorativos */
+.sakura-bg {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.6;
+    user-select: none;
+    z-index: 1;
+}
+
+.s1 { top: 10%; left: 5%; }
+.s2 { top: 40%; right: 8%; transform: rotate(15deg); }
+.s3 { bottom: 10%; left: 8%; transform: rotate(-20deg); }
+
+/* Caixa de Conteúdo */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.content-box {
+    background-color: var(--box-rgba);
+    padding: 40px;
+    border-radius: 25px;
+    border: 3px solid var(--detalhe-sakura);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+h2 { margin-top: 30px; }
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: var(--detalhe-sakura);
+    margin: 20px 0;
+}
+
+/* Mídia */
+.image-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid var(--texto-branco);
+}
+
+.caption {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* --- MODO DALTONISMO --- */
+/* Aplica um filtro global simulando/corrigindo contrastes para maior legibilidade */
+body.modo-daltonismo {
+    --bg-verde-claro: #37474f; /* Cinza azulado escuro para alto contraste */
+    --box-rgba: rgba(0, 0, 0, 0.8);
+    --detalhe-sakura: #ffeb3b; /* Amarelo vivo substituindo o rosa para destacar no daltonismo */
+    filter: saturate(1.2) contrast(1.2);
+}

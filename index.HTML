@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header class="accessibility-bar">
+        <div class="control-group">
+            <button onclick="alterarFonte(1)" aria-label="Aumentar letra">A+</button>
+            <button onclick="alterarFonte(-1)" aria-label="Diminuir letra">A-</button>
+        </div>
+        <div class="control-group">
+            <button onclick="alterarBrilho(10)" aria-label="Aumentar brilho">☀️ +</button>
+            <button onclick="alterarBrilho(-10)" aria-label="Diminuir brilho">☀️ -</button>
+        </div>
+        <div class="control-group">
+            <button onclick="alternarDaltonismo()" id="btn-daltonismo">Modo Daltonismo</button>
+        </div>
+    </header>
+
+    <div id="overlay-brilho"></div>
+
+    <main class="container">
+        <div class="sakura-bg s1">🌸</div>
+        <div class="sakura-bg s2">🌸</div>
+        <div class="sakura-bg s3">🌸</div>
+
+        <section class="content-box">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p class="subtitle">A harmonia entre a força da nossa terra e a tecnologia de amanhã.</p>
+            
+            <hr>
+
+            <h2>O que é o Agro Forte?</h2>
+            <p>O agronegócio moderno une a robustez da produção no campo com o respeito à biodiversidade. Ser "forte" hoje significa produzir o suficiente para alimentar o mundo, garantindo que os recursos naturais sejam preservados para as próximas gerações.</p>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80" alt="Plantação jovem crescendo sob o sol, representando a agricultura do futuro.">
+                <p class="caption">Inovação e sustentabilidade caminhando lado a lado.</p>
+            </div>
+
+            <h2>Tecnologia e Sustentabilidade</h2>
+            <p>Através do uso de inteligência artificial, drones e manejo biológico, o agro sustentável reduz o impacto ambiental, economiza água e protege o solo. O futuro do planeta depende de uma agricultura consciente e tecnológica.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
